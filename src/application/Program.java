@@ -1,5 +1,6 @@
 package application;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -9,7 +10,8 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
 		/*Department obj = new Department (1, "Books");
 		System.out.println(obj);
 		Seller seller = new Seller (21, "Pierre", "pierre@gmail.com", new Date(), 3000.0, obj); TESTANDO AS CLASSES*/
@@ -39,6 +41,13 @@ public class Program {
 		seller.setName("Bob Brown");
 		sellerDao.update(seller);
 		System.out.println("Seller updated!");
+		
+		System.out.println("\n=== TEST 6: seller Delete ===");
+		System.out.println("Enter id for delete teste: ");
+		int id = sc.nextInt();
+		sellerDao.deleteById(id);
+		System.out.println("Seller deleted!");
+		sc.close();
 	}
 
 }
